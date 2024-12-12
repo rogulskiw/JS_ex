@@ -109,5 +109,22 @@ const transactionAmount = 1000;
 const type = "transfer"; 
 const bankFee = calculateBankFee(transactionAmount, type)
 
-//
+//ARROW FUNCTION WITH FILTER
+
+const products = [
+    { name: "Shirt", price: 49.99 },
+    { name: "Trousers", price: 79.99 },
+    { name: "Shoes", price: 129.99 },
+    { name: "Jacket", price: 149.99 },
+  ];
+  
+  const filterProducts = (foo) => {
+      const filtering = products.filter(foo);
+      return filtering;
+  }
+  
+  const filteredProducts = filterProducts((products) => products.price < 100);
+  console.log(filteredProducts[0].name + ": " + filteredProducts[0].price);
+  console.log(filteredProducts[1].name + ": " + filteredProducts[1].price);
+  
 
