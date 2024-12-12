@@ -43,5 +43,21 @@ function calculateTax(value, taxRate = 0.23){ //default value which can be overw
  console.log(calculateTax(100)) // basic counting
  console.log(calculateTax(100, 0.15)) //overwriting default value of taxRate
 
+ //AVERAGE OF MARKS ARRAY
+
+ const marks = [4, 3.5, 5, 4.5, 3, 4];
+ const countAvg = function(x){
+     let sum = 0; 
+     for(let el of marks){
+         sum += el;
+     }
+     
+     const avg = sum / marks.length;
+     return avg;
+ }
  
+ const result = countAvg(marks);
+ console.log(`An average of marks is: ${result}`);
+
+ //
 
