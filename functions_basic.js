@@ -128,3 +128,30 @@ const products = [
   console.log(filteredProducts[1].name + ": " + filteredProducts[1].price);
   
 
+//ARROW FUNCTION WITH THIS INSIDE FUNCTION 
+
+function calculateArea(width, height){
+    let area = width * height;
+    const printArea = () => {
+        console.log(this);
+        let result = `Pole prostokata: ${area}`;
+        console.log(result)
+    }
+     printArea();
+}
+
+calculateArea(5,3);
+
+//OBJECT CONSTRUCTOR
+
+function Person() {
+    const self = this;
+    self.name= ""; 
+    self.setName = function(name){
+        self.name = name;
+    };
+}
+
+const person = new Person();
+person.setName("John");
+console.log(person.name);
