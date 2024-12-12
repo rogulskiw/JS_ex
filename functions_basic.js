@@ -78,6 +78,19 @@ function displayAverageTemperature(avg){
  
 calculateAverageTemperature(temperatures, displayAverageTemperature);
 
+//FUNCTION WITH FOREACH
+
+const numbers = [1,2,3,4,5];
+
+const calculateSum = (arr) => {
+    let sum = 0; 
+    arr.forEach((el) => sum+=el);
+    return sum;
+    }
+    
+    const result1 = calculateSum(numbers);
+    console.log(result);
+
 //
 
 
