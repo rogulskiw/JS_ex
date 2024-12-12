@@ -59,5 +59,25 @@ function calculateTax(value, taxRate = 0.23){ //default value which can be overw
  const result = countAvg(marks);
  console.log(`An average of marks is: ${result}`);
 
- //
+ //AVERAGE TEMPERATURE
+
+ function calculateAverageTemperature(temperatureData, callback){
+    let sum = 0;
+    for(let el of temperatureData){
+        sum += el;
+    }
+    const average = sum / temperatureData.length;
+    callback(average);
+}
+
+const temperatures = [23, 24, 22, 25, 21];
+
+function displayAverageTemperature(avg){
+    console.log(`An average temperature: ${avg}`);
+}
+ 
+calculateAverageTemperature(temperatures, displayAverageTemperature);
+
+//
+
 
