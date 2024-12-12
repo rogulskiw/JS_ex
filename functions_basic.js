@@ -91,6 +91,23 @@ const calculateSum = (arr) => {
     const result1 = calculateSum(numbers);
     console.log(result);
 
-//
+//BANK FEE
 
+function calculateBankFee(amount, type, commission = 0.05){
+    let sum = 0;
+    if(transactionType ==="transfer"){
+        sum += 1.5;
+    } else if (transactionType ==="deposit") {
+        sum +=0.5;
+    }
+    sum += amount * commission;
+    console.log(`Bank fee: ${sum}`)
+    return sum;
+}
+
+const transactionAmount = 1000; 
+const type = "transfer"; 
+const bankFee = calculateBankFee(transactionAmount, type)
+
+//
 
