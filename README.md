@@ -1,1 +1,1 @@
-# JS_ex
+Here are posted JavaScript exercises worth remembering and saving!
