@@ -56,5 +56,11 @@ expenses.forEach(function(n){
 
 console.log(`All expenses: ${allExpenses}`)
 
+//INDEXOF AND LASTINDEXOF
+
+const nums= [5,10,15,20,15,30,35];
+console.log('Index of first 15: ' + liczby.indexOf(15)) //it shows te first situation when given number appears
+console.log('Index of last 15: ' + liczby.lastIndexOf(15)) //it shows te last situation where given number appears
+
 
      
