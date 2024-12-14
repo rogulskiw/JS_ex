@@ -38,9 +38,23 @@ let part2 = "And that is the second one."
 const wholeText = part1.concat(part2); 
 
 console.log(wholeText)
-
-
 console.log(wholeText.slice(0,10))
 
 //ARRAY.FOREACH
+let allExpenses = 0;
+     
+const expenses = [
+    { name: "Food", amount: 50 },
+    { name: "Bills", amount: 100 },
+    { name: "Transport", amount: 30 },
+    { name: "Shopping", amount: 70 },
+];
 
+expenses.forEach(function(n){
+    allExpenses += n.amount;
+})
+
+console.log(`All expenses: ${allExpenses}`)
+
+
+     
