@@ -30,4 +30,17 @@ console.log(schedule)
 schedule.shift();
 console.log(schedule)
 
+//SLICE & CONCAT
+
+let part1 = 'That is the first text. '
+let part2 = "And that is the second one."
+
+const wholeText = part1.concat(part2); 
+
+console.log(wholeText)
+
+
+console.log(wholeText.slice(0,10))
+
+//ARRAY.FOREACH
 
