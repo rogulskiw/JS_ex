@@ -112,4 +112,36 @@ console.log("Last book index: ", lastIndeks);
 console.log("Step 3:");
 console.log("The book with given author is missing.");
 }
-     
+
+//FILTER AND INCLUDES
+
+const products = [
+    { name: "Phone Samsung", price: 1500, available: true },
+    { name: "Laptop Lenovo", price: 2500, available: true },
+    { name: "Smartwatch Apple", price: 800, available: false },
+    { name: "TV LG", price: 3000, available: true },
+    { name: "Headphones Sony", price: 200, available: true },
+];
+
+const availableProducts = products.filter(n => n.available===true)
+
+console.log("Available products:");
+availableProducts.forEach((product) => {
+console.log("[Name]", product.name, "[Price]", product.price)
+});
+
+const price1500 = products.filter(n => n.price <= 1500)
+console.log("Products cheaper than 1500:");
+price1500.forEach((product) => {
+console.log("[Name]", product.name, "[Price]", product.price);
+});
+
+const phone = products.filter(n => n.name.includes("Phone"));
+
+console.log("Products with phone in their name:");
+phone.forEach((product) => {
+console.log("[Name]", product.nazwa, "[Price]", product.cena);
+});
+
+
+
