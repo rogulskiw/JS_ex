@@ -192,4 +192,21 @@ console.log(
 );
 });
 
+const uczestnicy = ['Michal', "Tomasz", "Katarzyna", "Marcin", "Anna"];
+     
+console.log("Krok 1: Wyswietlenie tablicy");
+uczestnicy.forEach((uczestnik, index) => {
+    console.log(`[${index + 1}] ${uczestnik}`)
+});
 
+uczestnicy.sort();
+console.log("Krok 2: Sortowanie alfabetyczne");
+uczestnicy.forEach((uczestnik, index) => {
+console.log(`[${index + 1}] ${uczestnik}`);
+});
+
+uczestnicy.reverse(); 
+console.log("Krok 3: Odwrocenie kolejnosci");
+uczestnicy.forEach((uczestnik, index) => {
+console.log(`[${index + 1}] ${uczestnik}`);
+});
