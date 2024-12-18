@@ -24,6 +24,8 @@ magazyn.forEach((ilosc, produkt) => {
     console.log(produkt + ": " + ilosc);
 });
 
+//GET HAS SIZE
+
 const orders = new Map();
 const order1 = {
    id: "order001",
@@ -66,4 +68,26 @@ const order2 = {
        console.log(`Nie znaleziono zamowienia o ID ${orderIdToGet}.`);
    }
    
+   //DELETE & CLEAR
+
+   const shoppingList = new Map(); 
+     
+   shoppingList.set('Jablka', 5);
+   shoppingList.set('Chleb', 2);
+   shoppingList.set('Mleko', 1);
+   console.log(`Zawartosc listy zakupow:`)
+   for(const [produkt, ilosc] of shoppingList.entries()){
+       console.log(`${produkt}: ${ilosc}`)
+   }
    
+   shoppingList.delete('Chleb')
+   console.log(`Zawartosc listy zakupow po usunieciu:`)
+   for(const [produkt, ilosc] of shoppingList.entries()){
+       console.log(`${produkt}: ${ilosc}`)
+   }
+   
+   shoppingList.clear(); 
+   console.log(`Zawartosc listy zakupow po zakupach:`)
+   for(const [produkt, ilosc] of shoppingList.entries()){
+       console.log(`${produkt}: ${ilosc}`)
+   }
