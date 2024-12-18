@@ -91,3 +91,22 @@ const order2 = {
    for(const [produkt, ilosc] of shoppingList.entries()){
        console.log(`${produkt}: ${ilosc}`)
    }
+
+   //KEYS AND VALUES
+
+   const myMap = new Map();
+     
+   myMap.set("Jablka", 5);
+   myMap.set("Chleb", 2);
+   myMap.set("Mleko", 1);
+   console.log("Klucze z mapy:")
+   const iterator = myMap.keys(); 
+   for(const key of iterator){
+       console.log(key)
+   }
+   console.log("Wartosci z mapy:")
+   const iterator1 = myMap.values(); 
+   for(const value of iterator1){
+       console.log(value)
+   }
+
