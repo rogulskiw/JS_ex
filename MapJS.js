@@ -123,4 +123,71 @@ for(const element of mySet){
     console.log(element)
 }
 
-//
+//HAS AND SIZE
+
+const programmingLanguages = new Set();
+    
+programmingLanguages.add("JavaScript");
+programmingLanguages.add("Java");
+programmingLanguages.add("Python");
+
+if(programmingLanguages.has('Java')){
+    console.log(`Element [Java] zostal znaleziony w zbiorze.`)
+}
+const setSize = programmingLanguages.size;
+console.log(`Liczba elementow w zbiorze: ${setSize}`)
+
+//DELETE CLEAR
+
+const favoriteMovies = new Set();
+favoriteMovies.add("Incepcja");
+favoriteMovies.add("Interstellar");
+favoriteMovies.add("Prestiz");
+
+console.log("[Moje ulubione filmy]")
+for(const movie of favoriteMovies){
+   console.log(movie)
+}
+
+favoriteMovies.delete("Interstellar")
+
+console.log("[Moje ulubione filmy po usunieciu filmu Interstellar]")
+for(const movie of favoriteMovies){
+   console.log(movie)
+}
+
+favoriteMovies.clear();
+console.log("[Moje ulubione filmy po wyczyszczeniu]")
+for(const movie of favoriteMovies){
+   console.log(movie)
+}
+
+//KEY VALUES ENTRTIES
+
+const students = [
+    { id: 1, firstName: 'John', lastName: 'Doe' },
+    { id: 2, firstName: 'Jane', lastName: 'Smith' },
+    { id: 3, firstName: 'David', lastName: 'Johnson' },
+];
+
+const studentSet = new Set(); 
+for(const student of students){
+    studentSet.add(student); 
+}
+console.log("[Numer identyfikacyjny studentow]")
+const itr = studentSet.keys(); 
+for(const student of itr){
+    console.log(student.id)
+}
+
+console.log("[Imiona i nazwiska studentow]")
+const itr1 = studentSet.values(); 
+for(const student of itr1){
+    console.log(student.firstName, student.lastName);
+}
+
+console.log("[Dane studentow]")
+for(const entry of studentSet.entries(students)){
+    console.log(entry[0].id, entry[1].firstName, entry[1].lastName);
+}
+
