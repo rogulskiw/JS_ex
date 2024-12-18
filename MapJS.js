@@ -1,3 +1,73 @@
+ //KEYS AND VALUES
+
+const myMap = new Map();
+     
+myMap.set("Jablka", 5);
+myMap.set("Chleb", 2);
+myMap.set("Mleko", 1);
+console.log("Klucze z mapy:")
+const iterator = myMap.keys(); 
+for(const key of iterator){
+       console.log(key)
+}
+console.log("Wartosci z mapy:")
+const iterator1 = myMap.values(); 
+for(const value of iterator1){
+    console.log(value)
+}
+
+//SET AND NEW SET ADD
+
+const mySet = new Set();
+     
+mySet.add("jabkko");
+mySet.add("banan");
+mySet.add("pomarancza");
+mySet.add("truskawka");
+console.log("Zawartosc zbioru:")
+for(const element of mySet){
+    console.log(element)
+}
+
+//HAS AND SIZE
+
+const programmingLanguages = new Set();
+    
+programmingLanguages.add("JavaScript");
+programmingLanguages.add("Java");
+programmingLanguages.add("Python");
+
+if(programmingLanguages.has('Java')){
+    console.log(`Element [Java] zostal znaleziony w zbiorze.`)
+}
+const setSize = programmingLanguages.size;
+console.log(`Liczba elementow w zbiorze: ${setSize}`)
+
+//DELETE & CLEAR
+
+const shoppingList = new Map(); 
+     
+shoppingList.set('Jablka', 5);
+shoppingList.set('Chleb', 2);
+shoppingList.set('Mleko', 1);
+console.log(`Zawartosc listy zakupow:`)
+for(const [produkt, ilosc] of shoppingList.entries()){
+       console.log(`${produkt}: ${ilosc}`)
+   }
+   
+shoppingList.delete('Chleb')
+console.log(`Zawartosc listy zakupow po usunieciu:`)
+for(const [produkt, ilosc] of shoppingList.entries()){
+       console.log(`${produkt}: ${ilosc}`)
+   }
+   
+shoppingList.clear(); 
+console.log(`Zawartosc listy zakupow po zakupach:`)
+for(const [produkt, ilosc] of shoppingList.entries()){
+       console.log(`${produkt}: ${ilosc}`)
+   }
+
+//SET FOREACH DELETE
 let magazyn = new Map();
 magazyn.set("Telewizor", 5);
 magazyn.set("Laptop", 10);
@@ -68,75 +138,6 @@ const order2 = {
        console.log(`Nie znaleziono zamowienia o ID ${orderIdToGet}.`);
    }
    
-   //DELETE & CLEAR
-
-   const shoppingList = new Map(); 
-     
-   shoppingList.set('Jablka', 5);
-   shoppingList.set('Chleb', 2);
-   shoppingList.set('Mleko', 1);
-   console.log(`Zawartosc listy zakupow:`)
-   for(const [produkt, ilosc] of shoppingList.entries()){
-       console.log(`${produkt}: ${ilosc}`)
-   }
-   
-   shoppingList.delete('Chleb')
-   console.log(`Zawartosc listy zakupow po usunieciu:`)
-   for(const [produkt, ilosc] of shoppingList.entries()){
-       console.log(`${produkt}: ${ilosc}`)
-   }
-   
-   shoppingList.clear(); 
-   console.log(`Zawartosc listy zakupow po zakupach:`)
-   for(const [produkt, ilosc] of shoppingList.entries()){
-       console.log(`${produkt}: ${ilosc}`)
-   }
-
-   //KEYS AND VALUES
-
-   const myMap = new Map();
-     
-   myMap.set("Jablka", 5);
-   myMap.set("Chleb", 2);
-   myMap.set("Mleko", 1);
-   console.log("Klucze z mapy:")
-   const iterator = myMap.keys(); 
-   for(const key of iterator){
-       console.log(key)
-   }
-   console.log("Wartosci z mapy:")
-   const iterator1 = myMap.values(); 
-   for(const value of iterator1){
-       console.log(value)
-   }
-
-//SET AND NEW SET ADD
-
-const mySet = new Set();
-     
-mySet.add("jabkko");
-mySet.add("banan");
-mySet.add("pomarancza");
-mySet.add("truskawka");
-console.log("Zawartosc zbioru:")
-for(const element of mySet){
-    console.log(element)
-}
-
-//HAS AND SIZE
-
-const programmingLanguages = new Set();
-    
-programmingLanguages.add("JavaScript");
-programmingLanguages.add("Java");
-programmingLanguages.add("Python");
-
-if(programmingLanguages.has('Java')){
-    console.log(`Element [Java] zostal znaleziony w zbiorze.`)
-}
-const setSize = programmingLanguages.size;
-console.log(`Liczba elementow w zbiorze: ${setSize}`)
-
 //DELETE CLEAR
 
 const favoriteMovies = new Set();
