@@ -110,3 +110,17 @@ const order2 = {
        console.log(value)
    }
 
+//SET AND NEW SET ADD
+
+const mySet = new Set();
+     
+mySet.add("jabkko");
+mySet.add("banan");
+mySet.add("pomarancza");
+mySet.add("truskawka");
+console.log("Zawartosc zbioru:")
+for(const element of mySet){
+    console.log(element)
+}
+
+//
