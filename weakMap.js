@@ -27,4 +27,27 @@ if (employeeMap.has(employee2)) {
     console.log("Brak danych dla pracownika 2.");
 }
 
+//WEAK SET
+const usersSet = new WeakSet();
+     
+function trackUserActivity(user, action) {
+    if (!usersSet.has(user)) {
+        usersSet.add(user);
+    }
 
+    user.activityCount = (user.activityCount || 0) + 1;
+
+    console.log(
+        `Uzytkownik o id ${user.id} wykonal ${user.activityCount}. akcje: ${action}`
+    );
+}
+
+// Przykladowe wywolania funkcji trackUserActivity
+const user1 = { id: 1 };
+const user2 = { id: 2 };
+const user3 = { id: 3 };
+
+trackUserActivity(user1, "klikniecie na przycisk");
+trackUserActivity(user2, "przesuniecie suwaka");
+trackUserActivity(user1, "wyslanie formularza");
+trackUserActivity(user3, "klikniecie na link");
