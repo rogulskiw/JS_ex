@@ -32,3 +32,18 @@ function displayCurrentDateTime(){
 }
 displayCurrentDateTime();
 
+//CALCULATING FUTURE DATE AND TIME
+
+function calculateFutureDate(){
+    const currentDate = new Date();
+    let year = currentDate.setFullYear(currentDate.getFullYear() + 3);
+    let month = currentDate.setMonth(2)
+    let day = currentDate.setDate(15)
+    let hour = currentDate.setHours(18)
+    let minutes = currentDate.setMinutes(30)
+    let seconds = currentDate.setSeconds(45)
+    let milliseconds = currentDate.setMilliseconds(500)
+    console.log(`Future Date: ${currentDate.toLocaleString()}`);
+}
+calculateFutureDate();
+
