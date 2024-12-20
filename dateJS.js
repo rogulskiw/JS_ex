@@ -47,3 +47,18 @@ function calculateFutureDate(){
 }
 calculateFutureDate();
 
+//COUNTING REMAINING TIME
+
+let sum = 0;
+let wynik = 0;
+function calculateElapsedTime() {
+    const startTime = Date.now(); 
+    for(let i = 0; i < 1000000; i++){
+        sum+=i;
+    }
+ const endTime = Date.now();
+ wynik = endTime - startTime;
+ console.log(`Czas wykonania operacji: ${wynik} ms`)
+}
+
+calculateElapsedTime();
