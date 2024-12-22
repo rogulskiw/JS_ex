@@ -43,9 +43,31 @@ function calculateFactorial(number){
         factorial = calculateFactorial(number-1)
             factorial*=number;
             return factorial;
-        
-    
 }
 const number = 5; 
 const result1 = calculateFactorial(number)
 console.log("Factorial of number", number, "is:", result);
+
+
+//ADDING, REMOVING FROM STACK
+let names = [];
+function pushName(name){
+    names.push(name);
+}
+function popName(){
+    let name = names.pop()
+    return name;
+}
+
+function peekName(){
+    let name = names[names.length -1]
+    return name;
+}
+
+pushName("Ann")
+pushName("John")
+pushName("Beatrice")
+const last = popName();
+console.log("Deleted name:",last)
+const peek = peekName();
+console.log("The last name on the stack:", peek)
