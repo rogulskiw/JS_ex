@@ -34,3 +34,18 @@ const numbers = [1,2,4,5,7,8,9]
 const result = calculateSum(numbers)
 console.log("The sum of numbers higher than 5:", result)
 
+//Recursion with factorial
+function calculateFactorial(number){
+    if(number===1 || number===0){
+        return 1;
+    } 
+        let factorial = 1; 
+        factorial = calculateFactorial(number-1)
+            factorial*=number;
+            return factorial;
+        
+    
+}
+const number = 5; 
+const result1 = calculateFactorial(number)
+console.log("Factorial of number", number, "is:", result);
