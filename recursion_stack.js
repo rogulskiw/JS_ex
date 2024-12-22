@@ -13,3 +13,24 @@ function countdown(number){
    
 countdown(5);
 
+//SUM OF NUMBERS HIGHER THAN 5
+const calculateSum = (arr) =>{
+    if(arr.length ==0){
+        return 0;
+    }
+    let firstElement = arr[0];
+    let sum = 0;
+    if(firstElement > 5){
+        sum+=firstElement;
+    }
+    let remainingArray = [...arr];
+    remainingArray.shift();
+    const recursiveSum = calculateSum(remainingArray)
+    sum += recursiveSum;
+    return sum;
+}
+
+const numbers = [1,2,4,5,7,8,9]
+const result = calculateSum(numbers)
+console.log("The sum of numbers higher than 5:", result)
+
