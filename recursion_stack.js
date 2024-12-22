@@ -71,3 +71,37 @@ const last = popName();
 console.log("Deleted name:",last)
 const peek = peekName();
 console.log("The last name on the stack:", peek)
+
+//USING STACK FOR CHECKING CORRECTNESS OF THE CODE
+
+function checkSyntax(code){
+    const stack = []
+    let isSyntaxValid = true;
+    for(let i = 0; i <code.length; i++){
+        const char = code[i]; 
+        
+        if(char ==='(' || char ==="{" || char ==="["){
+            stack.push(char)
+        } else if(char ===')' || char ==='}' || char ===']'){
+            if(stack.length === 0){
+                return false;
+            } 
+
+           const top = stack.pop()
+           if(
+               (char === ")" && top !== "(") ||
+               (char === "}" && top !== "{") ||
+               (char === "]" && top !== "[")
+           ) {
+               return false; // Inappropriate bracket usage
+           }
+        }
+    }
+    
+    return stack.length ===0;
+}
+
+    const code = "(function() { console.log('Hello, world!'); })()";
+const isSyntaxValid = checkSyntax(code);
+
+console.log("Is code valid?", isSyntaxValid);
