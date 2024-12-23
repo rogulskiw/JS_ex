@@ -20,3 +20,23 @@ checkEggs()
 
 setTimeout(boilEggs,3000)
 
+//COUNTING TO THE NEW YEAR
+function newYearCounting() {
+    let count = 10;
+    function displayCounter() {
+        count--;
+
+        if (count === 0) {
+            console.log("HAPPY NEW YEAR!");
+            clearInterval(intervalId);
+            return;
+        }
+
+        console.log(count);
+    }
+
+    const intervalId = setInterval(displayCounter, 1000);
+}
+
+newYearCounting();
+
