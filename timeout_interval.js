@@ -68,4 +68,3 @@ function moveCar(){
 car.position++;
 }
 const intervalId = setInterval(moveCar, 1000);
-
