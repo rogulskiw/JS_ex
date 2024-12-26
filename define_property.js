@@ -21,7 +21,8 @@ person.introduce();
 person.birthday();
 person.introduce();
 
-//ENUMERABLE
+//ENUMERABLE is set as true as a default and can be iterated
+// when enumerability is changed to false we can observe example below
 
 const person = new Object(); 
 person.name = "John";
