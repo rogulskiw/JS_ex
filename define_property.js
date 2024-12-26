@@ -40,4 +40,32 @@ function printProperties(person){
 }
 printProperties(person);
 
-//
+// CONFIGURABLE
+
+const car = {};
+     
+Object.defineProperties(car, {
+   brand: {
+       value: "Toyota",
+       writable: false,
+       enumerable: true,
+       configurable: false,
+       },
+   model: {
+       value: "Camry",
+       writable: false,
+       enumerable: true,
+       configurable: false,
+       },
+   })
+
+   console.log("Initial object 'car':", car);
+   
+   car.brand = "Honda"; //writable is set to false and there is no change
+   
+   console.log(car); 
+   
+   delete car.model; //configurable is set to false and there is no change
+   
+   console.log(car)
+
