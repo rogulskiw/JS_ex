@@ -21,4 +21,22 @@ person.introduce();
 person.birthday();
 person.introduce();
 
+//ENUMERABLE
+
+const person = new Object(); 
+person.name = "John";
+person.age = 30;
+person.city = "New York";
+
+Object.defineProperty(person, "name", {enumerable: true});
+Object.defineProperty(person, "age", {enumerable: false}); //age is set to enumerable: false and that's why for of loop does not show this property
+Object.defineProperty(person, "city", {enumerable: true});
+
+function printProperties(person){
+    for(const [key, value] of Object.entries(person)) {
+       console.log(`${key}: ${value}`)}
+       
+}
+printProperties(person);
+
 //
