@@ -69,3 +69,31 @@ Object.defineProperties(car, {
    
    console.log(car)
 
+//getOwnPropertyDescriptors()
+
+const person = {
+    name: "John",
+    age: 30, 
+    city: "New York",
+}
+
+const propertyDescriptors = Object.getOwnPropertyDescriptors(person) //setting propertiy descriptions
+
+console.log(propertyDescriptors) //showing all descriptors
+
+console.log("Property 'name' value:", person.name);
+console.log("Property 'age' value:", person.age);
+console.log("Property 'city' value:", person.city);
+
+person.name = "Mike";
+
+console.log("Property 'name' value after the change:", person.name);
+console.log("Property 'age' value:", person.age);
+console.log("Property 'city' value:", person.city);
+
+delete person.age;
+
+console.log("Property 'age' after deleting:", person.age); 
+
+console.log(propertyDescriptors)
+
