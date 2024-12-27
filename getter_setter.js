@@ -31,4 +31,37 @@ const TemperatureTracker = {
    console.log("The highest temperature:", TemperatureTracker.max);
    console.log("The lowest temperature:", TemperatureTracker.min);
 
-   
+   //SET AND SHOPPING LIST
+
+   const shoppingList = [];
+     
+   const shoppingApp = {
+       set list(item) {
+           shoppingList.push(item);
+       },
+       set removeItem(item) {
+           const index = shoppingList.indexOf(item);
+           if (index !== -1) {
+               shoppingList.splice(index, 1);
+           }
+       },
+       get count() {
+           return shoppingList.length;
+       },
+       get items() {
+           return shoppingList.join(", ");
+       },
+   };
+
+   shoppingApp.list = "Apples";
+   shoppingApp.list = "Bread";
+   shoppingApp.list = "Milk";
+   console.log("[Shopping list at the beginning]");
+   console.log("Products:", shoppingApp.items);
+   console.log("Number of products:", shoppingApp.count);
+
+   shoppingApp.removeItem = "Bread";
+
+   console.log("[Shopping list after removing]");
+   console.log("Products:", shoppingApp.items);
+   console.log("Number of products:", shoppingApp.count);
