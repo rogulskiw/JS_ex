@@ -79,4 +79,41 @@ mojTelewizor.changeVolume(75);
 mojTelewizor.changeChannel(5);
 mojTelewizor.switchOff();
 
+//SHOPPING LIST
 
+class ShoppingList{
+    constructor(shopping){
+        this.shopping = [];
+    }
+    
+    addElement(name){
+        this.shopping.push(name);
+        console.log(`Added ${name} to the Shopping List.`);
+    }
+    
+   removeElement(name) {
+   const index = this.shopping.indexOf(name);
+   if (index !== -1) {
+       this.shopping.splice(index, 1);
+       console.log(`Removed ${name} from the Shopping List.`);
+   } else {
+       console.log(`${name} is not in a Shopping List.`);
+       }
+   };
+    
+   showList() {
+       console.log("Shopping List:");
+       this.shopping.forEach((element, index) => {
+           console.log(`${index + 1}. ${element}`);
+       });
+   }
+    
+ }
+
+const myShoppingList = new ShoppingList();
+
+myShoppingList.addElement("Apples");
+myShoppingList.addElement("Bread");
+myShoppingList.addElement("Milk");
+myShoppingList.removeElement("Bread");
+myShoppingList.showList();
