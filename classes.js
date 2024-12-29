@@ -283,4 +283,26 @@ myShoppingList.showList();
     
     console.log("Liczba produktow we wszystkich koszykach:", Klient.licznikProduktow);
 
+    //STATIC METHOD
+
+    class RachunekGieldowy{
+        constructor(imie, nazwisko){
+            this.imie = imie; 
+            this.nazwisko = nazwisko;
+        }
+        static obliczWartoscAkcji(cenaAkcji){
+            return cenaAkcji * 100;
+        }
+        
+    }
+    
+    const rachunek = new RachunekGieldowy("Jan", "Kowalski");
+    
+    const cenaAkcji = 10.5; 
+    
+    const wartoscAkcji = RachunekGieldowy.obliczWartoscAkcji(cenaAkcji);
+    
+    console.log(`Imie i nazwisko: ${rachunek.imie} ${rachunek.nazwisko}`)
+    console.log(`Wartosc akcji wynosi: ${wartoscAkcji}`)
+
     
