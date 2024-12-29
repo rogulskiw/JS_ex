@@ -175,3 +175,54 @@ myShoppingList.showList();
     mojeKontoOszczednosciowe.wyplac(500);
     mojeKontoOszczednosciowe.obliczOdsetki();
 
+    //Methods
+
+    class Produkt{
+        constructor(name,price,desc){
+            this.name = name;
+            this.price = price;
+            this.desc = desc;
+        }
+        
+        informacje(){
+           console.log(`Product: ${this.name}`);
+           console.log(`Price: ${this.price} zl`);
+           console.log(`Description: ${this.desc}`);
+        }
+        
+    }
+    
+    class Elektronika extends Produkt{
+        constructor(name, price, desc, brand){
+            super(name, price, desc);
+            this.brand = brand;
+        }
+            informacje(){
+                super.informacje();
+                console.log(`Brand: ${this.brand}`);
+            }
+            
+        }
+    
+    class Odziez extends Produkt{
+        constructor(name, price, desc, size){
+            super(name, price, desc);
+            this.size = size;
+           }
+            informacje(){
+                super.informacje();
+                console.log(`Size: ${this.size}`);
+            }
+
+        
+    }
+    
+    const laptop = new Produkt("Laptop", 4500, "Great laptop."); 
+    const telewizor = new Elektronika("Telewizor", 3500, "A big 4K TV.", "Samsung")
+    const spodnie = new Odziez("Spodnie", 100, "Dark trousers.", "M");
+    
+    laptop.informacje(); 
+    telewizor.informacje(); 
+    spodnie.informacje(); 
+
+    
