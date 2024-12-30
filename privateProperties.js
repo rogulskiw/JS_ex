@@ -105,3 +105,59 @@ myTasks.removeTask("Zadanie 3");
 myTasks.showTasks();
 
 
+//SHOPPING LIST WITH CHECKING
+
+
+    class ShoppingList {
+        #items;
+ 
+        constructor() {
+            this.#items = [];
+        }
+ 
+        #isDuplicate(item) {
+            return this.#items.some((existingItem) => existingItem === item);
+        }
+ 
+        addItem(item) {
+            if (this.#isDuplicate(item)) {
+                console.log("Produkt juz istnieje na liscie.");
+            } else {
+                this.#items.push(item);
+                console.log("Produkt dodany do listy.");
+            }
+        }
+ 
+        removeItem(item) {
+            const index = this.#items.findIndex(
+                (existingItem) => existingItem === item
+            );
+            if (index !== -1) {
+                this.#items.splice(index, 1);
+                console.log("Produkt usuniety z listy.");
+            } else {
+                console.log("Produkt nie istnieje na liscie.");
+            }
+        }
+ 
+        showItems() {
+            if (this.#items.length === 0) {
+                console.log("Lista zakupow jest pusta.");
+            } else {
+                console.log("Lista zakupow:");
+                this.#items.forEach((item) => {
+                    console.log("- " + item);
+                });
+            }
+        }
+    }
+ 
+    const myList = new ShoppingList();
+    myList.addItem("Jablka");
+    myList.addItem("Mleko");
+    myList.addItem("Chleb");
+    myList.addItem("Mleko");
+    myList.showItems();
+ 
+    myList.removeItem("Mleko");
+    myList.showItems();
