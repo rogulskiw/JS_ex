@@ -44,3 +44,33 @@ try{
 } catch(error){
     console.log(error.message)
 }
+
+//TRY CATCH FINALLY
+
+class Product{
+    constructor(name, price, quantity){
+        this.name = name; 
+        this.price = price; 
+        this.quantity = quantity;
+    }
+    
+    buy(amount){
+           if(amount > this.quantity){
+               throw new Error("Nie ma wystarczajacej ilosci produktow w sklepie");
+           } else {
+               return this.quantity - amount;
+           }
+    }
+}
+
+try{
+    const product = new Product("Telefon", 999, 10);
+    product.buy(15);
+    
+} catch(error){
+    console.error(error.message)
+
+} finally {
+    console.log("Obsluga bledu zostala zakonczona.")
+}
+
