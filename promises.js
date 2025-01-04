@@ -78,3 +78,30 @@ getMenu()
     .catch((error) => {
         console.log("Blad:", error);
     });
+
+    //Finally
+
+    function downloadFile(_url) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const fileContent = "To jest zawartosc pobranego pliku.";
+                const success = true;
+ 
+                if (success) {
+                    resolve(fileContent);
+                } else {
+                    reject("Blad podczas pobierania pliku.");
+                }
+            }, 2000);
+        }).finally(() => {
+            console.log("Pobieranie zakonczone");
+        });
+    }
+ 
+    downloadFile("http://example.com/file.txt")
+        .then((content) => {
+            console.log("Zawartosc pliku:", content);
+        })
+        .catch((error) => {
+            console.log("Blad:", error);
+        });
