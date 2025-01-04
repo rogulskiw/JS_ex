@@ -105,3 +105,41 @@ getMenu()
         .catch((error) => {
             console.log("Blad:", error);
         });
+
+//ERRORS
+
+function checkUsernameAvailability(username){
+    return new Promise((resolve, reject) => {
+        setTimeout(function() {
+            const takenUsernames = ["john", "emma", "alex"];
+            if(!takenUsernames.includes(username)){
+                resolve(true);
+            } else {
+                reject("Nazwa uzytkownika jest juz zajeta.");
+            }
+        }, 2000);
+    });
+}
+checkUsernameAvailability("james")
+.then((available) => {
+   console.log("Czy nazwa uzytkownika jest dostepna? (james):", available);
+})
+.catch((error) => {
+   console.error("Blad:", error);
+});
+
+checkUsernameAvailability("alexander")
+.then((available) => {
+   console.log("Czy nazwa uzytkownika jest dostepna? (alexander):", available);
+})
+.catch((error) => {
+   console.error("Blad:", error);
+});
+
+checkUsernameAvailability("lucy")
+.then((available) => {
+   console.log("Czy nazwa uzytkownika jest dostepna? (lucy):", available);
+})
+.catch((error) => {
+   console.error("Blad:", error);
+});
