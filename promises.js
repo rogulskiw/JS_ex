@@ -187,3 +187,47 @@ Promise.all([getUserData(), getOrderData(), getProductData()])
    console.log("Wystapil blad:", error);
 });
 
+//Promise.allSettled
+
+function fetchUserData() {
+    return new Promise((resolve) => {
+        setTimeout(function() {
+            const userData = { name: "John", age: 30 };
+            resolve(userData);
+        }, 2000);
+    });
+}
+
+function fetchOrderData() {
+    return new Promise((resolve) => {
+        setTimeout(function() {
+            const orderData = { id: 123, total: 50 };
+            resolve(orderData);
+        }, 2000);
+    });
+}
+
+function fetchProductData() {
+    return new Promise((resolve) => {
+        setTimeout(function() {
+            const productData = { name: "Phone", price: 500 };
+            resolve(productData);
+        }, 2000);
+    });
+}
+
+Promise.allSettled([fetchUserData(), fetchOrderData(), fetchProductData()])
+.then((results) => {
+   for(let el of results){
+       if(el.status === "fulfilled"){
+           console.log("Dane uzytkownika:", el.value);
+       } else {
+           console.log("Nie udalo sie pobrac danych uzytkownika:", el.reason
+           );
+       }
+   }
+
+})
+.catch((error)=> {
+   console.log("Wystapil blad:", error);
+});
