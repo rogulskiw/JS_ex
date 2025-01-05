@@ -143,3 +143,47 @@ checkUsernameAvailability("lucy")
 .catch((error) => {
    console.error("Blad:", error);
 });
+
+//PROMISE ALL
+
+const getUserData = () => {
+    return new Promise ((resolve) => {
+        setTimeout(function() {
+            const userData = { name: "John", age: 30 };
+            resolve(userData); 
+        }, 2000);
+    });
+};
+    
+const getOrderData = () => {
+   return new Promise ((resolve) => {
+        setTimeout(function() {
+            const orderData = { id: 123, total: 50 };
+            resolve(orderData);
+        }, 2000);
+    });
+};
+
+function getProductData() {
+    return new Promise ((resolve) => {
+        setTimeout(function() {
+            const productData = { name: "Phone", price: 500 };
+            resolve(productData);
+        },2000);
+    });
+}
+
+Promise.all([getUserData(), getOrderData(), getProductData()])
+.then((results) => {
+    const userData = results[0];
+    const orderData = results[1];
+    const productData = results[2];
+    
+   console.log("Dane uzytkownika:", userData);
+   console.log("Dane zamowienia:", orderData);
+   console.log("Dane produktu:", productData);
+})
+.catch((error) => {
+   console.log("Wystapil blad:", error);
+});
+
