@@ -18,4 +18,40 @@ function delay(ms){
     }
   processTasks();
 
-  
+  //ADDITIONAL TASK
+
+  function compressFile(file) {
+    return new Promise((resolve) => {
+        const randomDelay = Math.floor(Math.random() * 3000) + 1000;
+        setTimeout(() => {
+            resolve(`Skompresowano plik: ${file}`);
+        }, randomDelay);
+    });
+}
+ 
+ const filesToCompress = [
+"obrazek.jpg",
+"dokument.docx",
+"muzyka.mp3",
+"video.mp4",
+];
+
+async function compressFiles(){
+    const compressedFiles = [];
+    for(const file of filesToCompress){
+        const result = await(2000);
+    compressedFiles.push(result);
+    console.log(result);
+    }
+    return compressedFiles;
+};
+
+compressFiles()
+.then((compressedFiles)=>{
+console.log("Proces kompresji zakonczony.");
+console.log("Skompresowane pliki:");
+console.log(compressedFiles);
+})
+.catch((error)=>{
+console.error("Wystapil blad podczas kompresji plikow:", error);
+})
