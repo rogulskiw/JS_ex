@@ -269,3 +269,46 @@ function raceBetweenSuppliers() {
 
 raceBetweenSuppliers();
 
+//Promise.any
+
+function checkWeatherInCityA(){
+    return new Promise((resolve) =>{
+        setTimeout(function() {
+            resolve("Słonecznie");
+        }, 2000);
+           
+    });
+}
+
+function checkWeatherInCityB(){
+    return new Promise((resolve) =>{
+        setTimeout(function() {
+            resolve("Pochmurno");
+        }, 3000);
+           
+    });         
+}
+
+function checkWeatherInCityC(){
+    return new Promise((resolve) =>{
+        setTimeout(function() {resolve("Deszczowo");
+            
+        }, 1000);
+        
+    });         
+}
+
+Promise.any([checkWeatherInCityA(), checkWeatherInCityB(), checkWeatherInCityC()])
+.then((result)=>{
+      if (result === "Slonecznie") {
+   console.log("Pogoda w miescie A: Slonecznie");
+} else if (result === "Pochmurno") {
+   console.log("Pogoda w miescie B: Pochmurno");
+} else if (result === "Deszczowo") {
+   console.log("Pogoda w miescie C: Deszczowo");
+} 
+})
+.catch((error)=> {
+   console.log("Pogoda w miescie C: Deszczowo");
+});
+
