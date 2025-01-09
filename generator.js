@@ -31,4 +31,16 @@ console.log(generator.next().value);
 console.log(generator.next().value);
 console.log(generator.next().value);
 
+//LOTTERY NUMBER GENERATOR
 
+function *lotteryNumberGenerator(){
+    const count = 5;
+    for(let i = 0 ; i<count; i++){
+        yield Math.floor(Math.random()*100); 
+    }
+}
+
+const generator2 = lotteryNumberGenerator(); 
+for(let number of generator){
+    console.log(number);
+}
