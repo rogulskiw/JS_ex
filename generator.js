@@ -41,6 +41,45 @@ function *lotteryNumberGenerator(){
 }
 
 const generator2 = lotteryNumberGenerator(); 
-for(let number of generator){
+for(let number of generator2){
     console.log(number);
+}
+
+//ORDERS FOR AN INTERNET SHOP
+
+class Order {
+    constructor(productName, quantity, unitPrice, orderDate = new Date()){
+        this.productName = productName;
+        this.quantity = quantity;
+        this.unitPrice = unitPrice;
+        this.orderDate = orderDate; 
+    }
+    
+    getTotalPrice(){
+        const price = parseInt(this.unitPrice * this.quantity);
+        return price;
+    }
+}
+
+function *orderGeneretor(){
+    const products = [
+       { productName: "Produkt A", quantity: 3, unitPrice: 10 },
+       { productName: "Produkt B", quantity: 2, unitPrice: 20 },
+       { productName: "Produkt C", quantity: 1, unitPrice: 15 },
+   ];
+   for(let product of products){
+       const order = new Order(product.productName, product.quantity, product.unitPrice);
+       yield order;
+   }
+   
+}
+
+let generator3 = orderGeneretor();
+for (const order of generator3) {
+   console.log("Produkt:", order.productName);
+   console.log("Ilosc:", order.quantity);
+   console.log("Cena jednostkowa:", order.unitPrice);
+   console.log("Data zamowienia:", order.orderDate.toISOString());
+   console.log("Cena calkowita:", order.getTotalPrice());
+   console.log("-------------------------");
 }
