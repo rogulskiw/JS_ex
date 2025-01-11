@@ -83,3 +83,27 @@ for (const order of generator3) {
    console.log("Cena calkowita:", order.getTotalPrice());
    console.log("-------------------------");
 }
+
+//POINTS WITH THROW TRY CATCH
+
+function* kasyno(){
+    let sumaPunktow = 0;
+    while(true){
+        const wynikRzutu = Math.floor(Math.random() *6)+ 1;
+        sumaPunktow += wynikRzutu;
+        if(sumaPunktow > 20){
+            throw new Error("Przekroczono limit punktow!");
+        } 
+        yield sumaPunktow;
+    }
+}
+const generator4 = kasyno();
+try {
+    while(true){
+        const wynik = generator4.next().value;
+        console.log("Suma punktow:", wynik);
+    }
+} catch (error) {
+    console.log(error.message);
+
+}
