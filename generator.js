@@ -107,3 +107,47 @@ try {
     console.log(error.message);
 
 }
+
+//ASYNCHRONOUS ITERATION
+
+// Definiujemy funkcję generatora zadania()
+async function* zadania() {
+    const listaZadan = [
+        {
+            id: 1,
+            opis: "Przygotowanie raportu",
+            status: "W trakcie",
+        },
+        {
+            id: 2,
+            opis: "Sprawdzenie wiadomości",
+            status: "Zakończone",
+        },
+        {
+            id: 3,
+            opis: "Spotkanie z klientem",
+            status: "W trakcie",
+        },
+    ];
+
+    for (const zadanie of listaZadan) {
+        // Symulujemy operację asynchroniczną za pomocą setTimeout i Promise
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+
+        // Używamy yield do zwracania informacji o zadaniu
+        yield zadanie;
+    }
+}
+
+// Tworzymy instancję generatora
+const generatorZadan = zadania();
+
+// Używamy pętli for await...of do iteracji po generatorze
+(async () => {
+    for await (const zadanie of generatorZadan) {
+        console.log("ID:", zadanie.id);
+        console.log("Opis:", zadanie.opis);
+        console.log("Status:", zadanie.status);
+        console.log("--------------------");
+    }
+})();
