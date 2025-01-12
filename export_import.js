@@ -69,3 +69,41 @@ function displayOrders(){
 
 export { addOrder, getTotalOrderValue, displayOrders };
 
+//TASK 3
+//DANIA.JS
+
+export const danie1 = {
+  nazwa: 'Pizza Margherita',
+  cena: 25.99,
+  ilosc: 2
+};
+ 
+export const danie2 = {
+  nazwa: 'Spaghetti Bolognese',
+  cena: 18.5,
+  ilosc: 1
+};
+ 
+export const danie3 = {
+  nazwa: 'Sałatka Cezar',
+  cena: 12.99,
+  ilosc: 3
+};
+
+//KALKULATOR.JS
+
+import * as dania from './dania.js';
+
+
+function obliczCalkowitaWartoscZamowienia(dania) {
+  let wartoscZamowienia = 0;
+  Object.values(dania).forEach(value => {
+    wartoscZamowienia += value.cena*value.ilosc;
+})
+  return wartoscZamowienia.toFixed(2);
+}
+
+const calkowitaWartoscZamowienia = obliczCalkowitaWartoscZamowienia(dania)
+
+console.log("Calkowita wartosc zamowienia: ", calkowitaWartoscZamowienia);
+
