@@ -107,3 +107,29 @@ const calkowitaWartoscZamowienia = obliczCalkowitaWartoscZamowienia(dania)
 
 console.log("Calkowita wartosc zamowienia: ", calkowitaWartoscZamowienia);
 
+//IMPORT * AS TASK4
+//main.js:
+
+import * as zadania from './zadania.js';
+ 
+zadania.dodajZadanie('Zrobic zakupy');
+zadania.dodajZadanie('Napisac raport');
+zadania.dodajZadanie('Odwiedzic przyjaciela');
+ 
+zadania.wyswietlZadania();
+
+
+//zadania.js:
+
+let listaZadan = [];
+ 
+export function dodajZadanie(tekstZadania) {
+  listaZadan.push(tekstZadania);
+}
+ 
+export function wyswietlZadania() {
+  console.log('Lista zadan:');
+  for (let i = 0; i < listaZadan.length; i++) {
+console.log(`${i + 1}. ${listaZadan[i]}`);
+  }
+}
