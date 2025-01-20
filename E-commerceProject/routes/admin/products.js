@@ -22,15 +22,15 @@ router.post(
     upload.single('image'), 
     [requireTitle, requirePrice], 
     async (req, res) => {
-        const errors = validationResult(req);
+    const errors = validationResult(req);
 
-    // if(!errors.isEmpty()){
-    //     return res.send(productsNewTemplate({ errors }));
-    // }
-    console.log(req.file);
-    // const image = req.file.buffer.toString('base64');
-    // const { title, price } = req.body;
-    // await productsRepo.create({ title, price, image });
+    if(!errors.isEmpty()){
+        return res.send(productsNewTemplate({ errors }));
+    }
+    
+    const image = req.file.buffer.toString('base64');
+    const { title, price } = req.body;
+    await productsRepo.create({ title, price, image });
 
     res.send('submitted');
 });
